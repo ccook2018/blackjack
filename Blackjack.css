@@ -1,0 +1,11 @@
+#gameAreaDealer {
+    border: solid 1px black;
+    display: block;
+    background-color: black;
+}
+
+#gameAreaPlayer {
+    border: solid 1px black;
+    display: block;
+    background-color: blue;
+}
