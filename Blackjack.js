@@ -29,6 +29,14 @@ function randomCard(x){
     var place = (600 - ((constant*1.426)+constant))/2;
     console.log(randT);
     placement = place + amtCards*cardWidth;
+    for(i = 0;i<usedCards.length;i++){
+      if(usedCards[i] == randV + "." + randT){
+        randV = Math.floor(Math.random()*13);
+        randT = Math.floor(Math.random()*4);
+        console.log("hit");
+        randomCard();
+      }
+    }
     drawImagePlayer(randV, randT, placement, 50);
     amtCards++;
     count++;
@@ -44,7 +52,12 @@ function randomCard(x){
     console.log(randT);
     placement = place + amtCards*cardWidth;
     for(i = 0;i<usedCards.length;i++){
-      if(usedCards[i]
+      if(usedCards[i] == randV + "." + randT){
+        randV = Math.floor(Math.random()*13);
+        randT = Math.floor(Math.random()*4);
+        console.log("hit");
+        randomCard();
+      }
     }
     drawImageDealer(randV, randT, placement, 50);
     amtCards++;
@@ -54,9 +67,13 @@ function randomCard(x){
 
 function setupTable(){
   randomCard(true);
+  console.log(usedCards);
   randomCard(true);
+  console.log(usedCards);
   randomCard(false);
+  console.log(usedCards);
   randomCard(false);
+  console.log(usedCards);
 };
 
 function drawImageDealer(v, t, x, y){
